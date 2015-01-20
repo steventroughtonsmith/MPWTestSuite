@@ -1,0 +1,287 @@
+  File:   1 "TestPerf.c.o"
+  File:   2 "{Libraries}PerformLib.o"
+  File:   3 "{Libraries}Interface.o"
+  File:   4 "{Libraries}IntEnv.o"
+  File:   5 "{Libraries}MacRuntime.o"
+  File:   6 "{CLibraries}StdCLib.o"
+
+ seg Main 1
+main		Main	$1,$0	 	 
+CVTPC		Main	$1,$E4	 	 
+__QSTRIPADDRESS		Main	$1,$270	@2A	 
+%%PERFORM		Main	$1,$2A6	 	 #
+PERFSETUP		Main	$1,$2A6	@32	 E
+PERFBUFFER		Main	$1,$2F8	@3A	 E
+PERFSTART		Main	$1,$328	@42	 E
+PERFSTOP		Main	$1,$356	@4A	 E
+PERFTALLY		Main	$1,$37A	@52	 E
+PERFINTTOSTR		Main	$1,$432	@5A	 
+%I_DIV4		Main	$1,$506	@62	 #
+%I_MOD4		Main	$1,$52C	 	 #
+%I_DIVMOD		Main	$1,$552	 	 #
+GESTALT		Main	$1,$5B4	@6A	 
+NEWPTR		Main	$1,$7C2	@72	 
+GETPTRSIZE		Main	$1,$7CC	@7A	 
+NEWHANDLE		Main	$1,$7DA	@82	 
+GETHANDLESIZE		Main	$1,$7E4	 	 
+NGETTRAPADDRESS		Main	$1,$7F2	@8A	 
+FSOPEN		Main	$1,$806	@92	 
+OPENDF		Main	$1,$806	 	 E
+FSCLOSE		Main	$1,$846	@9A	 
+FSREAD		Main	$1,$860	@A2	 
+FSWRITE		Main	$1,$864	@AA	 E
+GETVOL		Main	$1,$8A8	@B2	 
+FLUSHVOL		Main	$1,$8CA	@BA	 
+CREATE		Main	$1,$8EA	@C2	 
+SETEOF		Main	$1,$928	@CA	 
+GETFPOS		Main	$1,$948	@D2	 
+SETFPOS		Main	$1,$96A	@DA	 
+PBGETCATINFO		Main	$1,$990	@E2	 
+NUMTOSTRING		Main	$1,$9A6	@EA	 
+EXIT8		Main	$1,$9B2	 	 E
+STRIPADDRESS		Main	$1,$9B8	 	 
+C2PSTR		Main	$1,$9D2	 	 
+P2CSTR		Main	$1,$A08	 	 
+HGETVOL		Main	$1,$A24	@F2	 
+HDELETE		Main	$1,$A5A	@FA	 
+HGETFINFO		Main	$1,$A88	@102	 
+HSETFINFO		Main	$1,$AD2	@10A	 
+PLSTRCMP		Main	$1,$B30	@112	 
+__CplusInit		Main	$1,$B6E	 	 
+dtors__Fv		Main	$1,$C0A	 	 E
+GetAppName		Main	$1,$CA8	 	 #
+_GetProgramGlobals		Main	$1,$DB4	 	 
+_RTInit		Main	$1,$F5A	 	 
+_RTExit		Main	$1,$10F0	@11A	 
+_memchr		Main	$1,$115E	@122	 
+_memcpy		Main	$1,$1194	@12A	 
+__NUMTOOLBOXTRAPS		Main	$1,$11EA	 	 
+__GETTRAPTYPE		Main	$1,$1246	 	 
+TRAPAVAILABLE		Main	$1,$127C	@132	 
+%__MAIN		Main	$1,$12FE	@22	 
+___MAIN		Main	$1,$1326	 	 
+ULMULTS		Main	$1,$139E	 	 
+ULMULT		Main	$1,$13A6	@13A	 E
+LDIVTS		Main	$1,$13CE	 	 
+LDIVT		Main	$1,$13D6	@142	 E
+ULDIVTS		Main	$1,$13FC	 	 
+ULDIVT		Main	$1,$1404	@14A	 E
+LMODTS		Main	$1,$142A	 	 
+LMODT		Main	$1,$1432	@152	 E
+_LMODT		Main	$1,$1448	 	 E
+ULMODTS		Main	$1,$1484	 	 
+ULMODT		Main	$1,$148C	 	 E
+_ULMODT		Main	$1,$14A2	 	 E
+__setjmp		Main	$1,$1506	 	 
+longjmp		Main	$1,$152C	 	 
+strNoCaseCmp		Main	$1,$1564	 	 
+internalEqualString		Main	$1,$15EE	@15A	 
+qsortStringPointers		Main	$1,$1656	 	 
+qs1		Main	$1,$1688	 	 #
+_installLibExitProc		Main	$1,$17FC	@162	 
+_DoExitProcs		Main	$1,$183C	 	 
+_zero		Main	$1,$1890	 	 
+_INTENVINIT		Main	$1,$18FA	 	 
+_INTENVTERM		Main	$1,$19C0	 	 
+S64Negate		Main	$1,$1A12	@16A	 
+Subtract64U		Main	$1,$1A58	 	 #
+S64Set		Main	$1,$1AE6	@172	 
+S64Compare		Main	$1,$1B2A	@17A	 
+U64Max		Main	$1,$1B74	 	 
+U64Subtract		Main	$1,$1BA8	@182	 
+U64Multiply		Main	$1,$1BFC	@18A	 
+U64Divide		Main	$1,$1DD4	@192	 
+U64Set		Main	$1,$1F78	@19A	 
+U64SetU		Main	$1,$1FBC	@1A2	 
+U32SetU		Main	$1,$1FEE	@1AA	 
+U64Compare		Main	$1,$2004	@1B2	 
+U64ShiftRight		Main	$1,$204E	@1BA	 
+U64ShiftLeft		Main	$1,$20E4	@1C2	 
+UInt64ToSInt64		Main	$1,$217A	@1CA	 
+SInt64ToUInt64		Main	$1,$21B4	@1D2	 
+ size Main $21EE
+
+ seg %GlobalData 0
+_ArgvLBracketArgcRBracket		%GlobalData	$0,$0	 	 #C
+_SAGlbls		%GlobalData	$0,$4	 	 
+%?Anon		%GlobalData	$0,$E2	 	 #C
+%?Anon		%GlobalData	$0,$E8	 	 #C
+%?Anon		%GlobalData	$0,$EA	 	 #C
+%?Anon		%GlobalData	$0,$104	 	 #C
+%?Anon		%GlobalData	$0,$112	 	 #C
+_iob		%GlobalData	$0,$128	 	 C
+_lastbuf		%GlobalData	$0,$498	 	 C
+_findbuf_called_before		%GlobalData	$0,$49C	 	 #C
+__notabuffer		%GlobalData	$0,$4A0	 	 
+errno		%GlobalData	$0,$4A4	 	 C
+MacOSErr		%GlobalData	$0,$4A8	 	 C
+_StdDevs		%GlobalData	$0,$4AA	 	 C
+__SigEnv		%GlobalData	$0,$522	 	 C
+_pSIG_DFL		%GlobalData	$0,$566	 	 #C
+_pRAISE		%GlobalData	$0,$56A	 	 #C
+sigArray		%GlobalData	$0,$56E	 	 #C
+_nStdFilesOpened		%GlobalData	$0,$5AE	 	 C
+_#_IntEnv		%GlobalData	$0,$5B0	 	 C
+__myResFile		%GlobalData	$0,$5B4	 	 #C
+__TableEntries		%GlobalData	$0,$5B6	 	 #C
+gHostSystemUPP		%GlobalData	$0,$5BA	 	 C
+gHostGetEnvUPP		%GlobalData	$0,$5BE	 	 C
+gHostSetEnvUPP		%GlobalData	$0,$5C2	 	 C
+gNumElementsEnvP		%GlobalData	$0,$5C6	 	 C
+_PGMGlbls		%GlobalData	$0,$5CA	 	 #C
+__uniqueRetPC		%GlobalData	$0,$5F8	 	 #C
+_IsStandAlone		%GlobalData	$0,$5FC	 	 
+_macpgminfo		%GlobalData	$0,$600	 	 
+IOPortTable		%GlobalData	$0,$604	 	 
+#0002		%GlobalData	$0,$640	 	 #
+__target_for_exit		%GlobalData	$0,$640	 	 E
+__MyEnv		%GlobalData	$0,$640	 	 E
+#0001		%GlobalData	$0,$680	 	 #C
+__TheExitAddr		%GlobalData	$0,$680	 	 E
+_ArgC		%GlobalData	$0,$684	 	 E
+_ArgV		%GlobalData	$0,$688	 	 E
+_EnvP		%GlobalData	$0,$68C	 	 E
+upperChars		%GlobalData	$0,$690	 	 #C
+_IntEnv		%GlobalData	$0,$790	 	 C
+StandAlone		%GlobalData	$0,$7C4	 	 C
+ size %GlobalData $7C8
+
+ seg Seg1 2
+W500A		Seg1	$2,$0	@1DA	 
+W100		Seg1	$2,$2E	@1E2	 
+W1500		Seg1	$2,$5C	@1EA	 
+ size Seg1 $8A
+
+ seg SEG2 3
+Waste		SEG2	$3,$0	@1F2	 
+W500B		SEG2	$3,$2E	@1FA	 
+ size SEG2 $5C
+
+ seg ROMSEG1 4
+ROMW500A		ROMSEG1	$4,$0	@202	 
+ROMW100		ROMSEG1	$4,$68	@20A	 
+ROMW1500		ROMSEG1	$4,$CE	@212	 
+ size ROMSEG1 $136
+
+ seg ROMSEG2 5
+ROMWaste		ROMSEG2	$5,$0	@21A	 
+ROMW500B		ROMSEG2	$5,$68	@222	 
+ size ROMSEG2 $D0
+
+ seg PerfMain 6
+__NUMTOOLBOXTRAPS		PerfMain	$6,$0	 	 #
+__GETTRAPTYPE		PerfMain	$6,$4E	 	 #
+TRAPAVAILABLE		PerfMain	$6,$86	 	 #
+PERFCONTROL		PerfMain	$6,$100	@22A	 
+CHECKERR		PerfMain	$6,$14E	 	 #
+PERFWRITELN		PerfMain	$6,$1A0	 	 #
+ADDUPSEG		PerfMain	$6,$20E	 	 #
+OUTNAME		PerfMain	$6,$28C	 	 #
+PRINTBARCHART		PerfMain	$6,$336	 	 #
+PERFDUMP		PerfMain	$6,$7D0	@232	 
+%?Anon		PerfMain	$6,$E98	 	 #E
+PERFKONCAT		PerfMain	$6,$1016	 	 
+_GetAliasInfo		PerfMain	$6,$1034	 	 #
+_ResolveFileAlias		PerfMain	$6,$1162	 	 #
+ResolveFolderAliases		PerfMain	$6,$1278	 	 #
+MakeResolvedFSSpec		PerfMain	$6,$1546	 	 #
+PLSTRCMP		PerfMain	$6,$1632	 	 #
+ size PerfMain $1670
+
+ seg PerfInit 7
+INITPERF		PerfInit	$7,$0	@23A	 
+CALCPCOFFSET		PerfInit	$7,$75C	 	 
+ size PerfInit $85E
+
+ seg PerfTerm 8
+TERMPERF		PerfTerm	$8,$0	@242	 
+ size PerfTerm $62
+
+ seg STDIO 9
+__cleanup		STDIO	$9,$0	@24A	 
+_findbuf		STDIO	$9,$62	 	 
+fclose		STDIO	$9,$1C6	 	 
+fflush		STDIO	$9,$268	 	 
+_flsbuf		STDIO	$9,$32E	 	 
+_xflsbuf		STDIO	$9,$46A	 	 
+_wrtchk		STDIO	$9,$53E	 	 
+_bufsync		STDIO	$9,$5E2	 	 
+fwrite		STDIO	$9,$61E	 	 
+fprintf		STDIO	$9,$7CC	@252	 
+toint		STDIO	$9,$80C	 	 #
+_doprnt		STDIO	$9,$848	 	 
+ size STDIO $170A
+
+ seg INTENV A
+open		INTENV	$A,$0	 	 
+close		INTENV	$A,$78	@25A	 
+write		INTENV	$A,$E8	@262	 
+ioctl		INTENV	$A,$16C	@26A	 
+_getIOPort		INTENV	$A,$274	@272	 
+_initIOPtable		INTENV	$A,$3E2	 	 #
+_coreIOExit		INTENV	$A,$4D8	@27A	 
+_mapOSerr		INTENV	$A,$510	 	 #
+_uerror		INTENV	$A,$656	 	 
+fcntl		INTENV	$A,$68A	 	 
+dup		INTENV	$A,$6C8	@282	 
+__growFileTable		INTENV	$A,$6E2	 	 
+__SmartC2Pstr		INTENV	$A,$76A	@28A	 
+_faccess		INTENV	$A,$7D0	@292	 
+_InitSigs		INTENV	$A,$8C0	 	 
+raise		INTENV	$A,$914	@29A	 
+sig_dfl		INTENV	$A,$9AC	@2A2	 #
+exit		INTENV	$A,$A14	 	 
+_exit		INTENV	$A,$A2C	 	 
+ size INTENV $A6C
+
+ seg SADEV B
+_GetAliasInfo		SADEV	$B,$0	 	 
+_ResolveFileAlias		SADEV	$B,$138	 	 
+ResolveFolderAliases		SADEV	$B,$248	 	 
+FSMakeFSSpec_Long		SADEV	$B,$550	 	 
+ResolveFolderAliases_Long		SADEV	$B,$652	 	 
+_fsDelete		SADEV	$B,$79E	 	 #
+_fsRename		SADEV	$B,$820	 	 #
+_fsFAccess		SADEV	$B,$8B2	@2AA	 
+_fsOpen		SADEV	$B,$92A	 	 #
+_fsClose		SADEV	$B,$E2A	@2B2	 
+_fsRead		SADEV	$B,$EB0	@2BA	 
+_fsWrite		SADEV	$B,$F1C	@2C2	 
+_fsIoctl		SADEV	$B,$FAA	@2CA	 
+_coDelayedOpen		SADEV	$B,$10DC	 	 
+_coStdFDOpen		SADEV	$B,$121C	 	 
+_coOpen		SADEV	$B,$12D2	 	 
+_coFAccess		SADEV	$B,$13AE	@2D2	 
+_coClose		SADEV	$B,$1414	@2DA	 
+_coRead		SADEV	$B,$1494	@2E2	 
+_coWrite		SADEV	$B,$1526	@2EA	 
+_coIoctl		SADEV	$B,$15EA	@2F2	 
+_coExit		SADEV	$B,$16DC	@2FA	 
+_syFAccess		SADEV	$B,$16DE	@302	 
+_syClose		SADEV	$B,$1820	@30A	 
+_syRead		SADEV	$B,$1824	@312	 
+_syWrite		SADEV	$B,$1828	@31A	 
+_syIoctl		SADEV	$B,$1858	@322	 
+ size SADEV $18A0
+
+ seg %A5Init C
+_DATAINIT		%A5Init	$C,$0	 	 
+_DataInit		%A5Init	$C,$0	@32A	 E
+uncompress_world		%A5Init	$C,$5A	 	 #
+get_rl		%A5Init	$C,$BA	 	 #
+relocate_world		%A5Init	$C,$10E	 	 #
+ZEROBUFFER		%A5Init	$C,$16A	 	 #
+#0001		%A5Init	$C,$1AC	 	 #
+_A5Init3		%A5Init	$C,$1AE	 	 E
+ size %A5Init $1AE
+
+ seg SANELIB D
+_num2dec		SANELIB	$D,$0	 	 
+_cvt		SANELIB	$D,$20	@332	 
+ size SANELIB $E8
+
+ seg STDCLIB E
+memcpy		STDCLIB	$E,$0	@33A	 
+strcpy		STDCLIB	$E,$56	@342	 
+strlen		STDCLIB	$E,$6E	@34A	 
+ size STDCLIB $8E

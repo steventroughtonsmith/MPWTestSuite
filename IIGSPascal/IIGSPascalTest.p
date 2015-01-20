@@ -1,0 +1,1 @@
+PROGRAM IIGSPascalTest;USES	Types,	QuickDraw;BEGIN	WRITELN('Test IIGS Pascal')END.
