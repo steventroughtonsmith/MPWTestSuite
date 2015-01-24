@@ -5,7 +5,7 @@
 #
 
 # Location of your mpw binary
-MPW=mpw
+MPW ?= mpw
 
 RINCLUDES=/Applications/MPW-GM/Interfaces\&Libraries/Interfaces/RIncludes
 
