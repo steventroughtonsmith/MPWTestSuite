@@ -40,25 +40,26 @@ all : Count Memory TestPerf EditCDev Sample SillyBalls TESample TubeTest
 #
 
 VERSION	= "3.4d2"
+MPW ?= mpw
 
 %.c.o: %.c
-	mpw  SC $< -o $@ $(COptions)
+	$(MPW)  SC $< -o $@ $(COptions)
 
 %.c.ppc.o: %.c
-	mpw  MrC $< -o $@ $(MrCOptions)
+	$(MPW)  MrC $< -o $@ $(MrCOptions)
 
 %.a.o: %.a
-	mpw  asm $< -o $@
+	$(MPW)  asm $< -o $@
 
 Count : Count.68k Count.ppc
-	mpw duplicate -y Count.ppc $@
-	mpw duplicate -y -r Count.68k $@
+	$(MPW) duplicate -y Count.ppc $@
+	$(MPW) duplicate -y -r Count.68k $@
 	Rez -i $(RINCLUDES) Count.r	GenericCFRG.r -o Count -append -d APPNAME=\"Count\"
-	mpw SetVersion -t 'vers' -i 1 -version "$(VERSION)" Count
-	mpw SetFile -m . -c 'MPS ' -t MPST Count
+	$(MPW) SetVersion -t 'vers' -i 1 -version "$(VERSION)" Count
+	$(MPW) SetFile -m . -c 'MPS ' -t MPST Count
 
 Count.ppc :	Count.c.ppc.o Count.r	GenericCFRG.r
-	mpw PPCLink -d -c 'MPS ' -t MPST $(SymOpt) \
+	$(MPW) PPCLink -d -c 'MPS ' -t MPST $(SymOpt) \
 		Count.c.ppc.o \
 		"{SharedLibraries}"StdCLib \
 		"{SharedLibraries}"InterfaceLib \
@@ -68,7 +69,7 @@ Count.ppc :	Count.c.ppc.o Count.r	GenericCFRG.r
 		-o $@
 
 Count.68k : Count.c.o Count.r	GenericCFRG.r
-	mpw Link -d -c 'MPS ' -t MPST $(SymOpt) -mf \
+	$(MPW) Link -d -c 'MPS ' -t MPST $(SymOpt) -mf \
 		Count.c.o \
 		"{CLibraries}"StdClib.o \
 		"{Libraries}"Stubs.o \
@@ -98,7 +99,7 @@ DACreator	='movr'
 DAType		='dfil'
 
 Memory			:	Memory.c.o DAEntry.a.o
-	mpw  Link $(SymOptions) -da -rt DRVR=12 \
+	$(MPW)  Link $(SymOptions) -da -rt DRVR=12 \
 		-m DAEntry -sg Memory DAEntry.a.o "{Libraries}"DRVRRuntime.o \
 		Memory.c.o "{Libraries}"MacRuntime.o "{Libraries}"Interface.o \
 		-o Memory -c $(DACreator) -t $(DAType)
@@ -106,10 +107,10 @@ Memory			:	Memory.c.o DAEntry.a.o
 
 Memory.NOASM		:	Memory.DRVW Memory.r
 	Rez -i $(RINCLUDES) -rd -c $(DACreator) -t $(DAType) -d NOASM_BUILD Memory.r -o Memory.NOASM
-	mpw Duplicate -y Memory.NOASM Memory
+	$(MPW) Duplicate -y Memory.NOASM Memory
 
 Memory.DRVW 	:	Memory.c.o
-	mpw Link -w -rt DRVW=0 \
+	$(MPW) Link -w -rt DRVW=0 \
 		-sg Memory \
 		"{Libraries}"DRVRRuntime.o \
 		Memory.c.o \
@@ -126,7 +127,7 @@ Memory.DRVW 	:	Memory.c.o
 # have ROM maps (Power Macintoshes being notable examples).
 
 TestPerf	:	TestPerf.c.o
-	mpw Link -d \
+	$(MPW) Link -d \
 		-o TestPerf -t MPST -c 'MPS ' \
 		-l -la > TestPerf.map  \
 		TestPerf.c.o "{Libraries}"PerformLib.o \
@@ -200,9 +201,9 @@ sampLibs	= "{Libraries}"MacRuntime.o \
 			  "{Libraries}"Interface.o
 		
 Sample		: $(sampObjs) Sample.r
-	mpw Link -o $@ $(sampObjs) $(sampLibs) $(SymOptions)
+	$(MPW) Link -o $@ $(sampObjs) $(sampLibs) $(SymOptions)
 	Rez -i $(RINCLUDES) -rd -o $@ Sample.r -append
-	mpw SetFile $@ -t APPL -c 'MOOS' 
+	$(MPW) SetFile $@ -t APPL -c 'MOOS' 
 
 
 
@@ -275,9 +276,9 @@ teLibs	= "{Libraries}"MacRuntime.o \
 		  "{Libraries}"Interface.o
 
 TESample		: $(teObjs) TESample.r
-	mpw Link -o $@ $(teObjs) $(teLibs) $(SymOptions)
+	$(MPW) Link -o $@ $(teObjs) $(teLibs) $(SymOptions)
 	Rez -i $(RINCLUDES) -rd -append -o $@ TESample.r
-	mpw SetFile $@ -t APPL -c 'MOOT' 
+	$(MPW) SetFile $@ -t APPL -c 'MOOT' 
 
 
 
@@ -309,9 +310,9 @@ tubeLibs 	= "{Libraries}"Interface.o \
 			  "{Libraries}"MacRuntime.o 
 
 TubeTest	:	$(tubeObjs) TubeTest.r
-	mpw Link -o $@ $(tubeObjs) $(tubeLibs)
+	$(MPW) Link -o $@ $(tubeObjs) $(tubeLibs)
 	Rez -i $(RINCLUDES) -rd -o $@ TubeTest.r -append
-	mpw SetFile $@ -t APPL -c '????'
+	$(MPW) SetFile $@ -t APPL -c '????'
 
 clean:
 	rm -f *.SYM *.c.ppc.o *.c.o *.a.o *.xcoff Count.68k Count.ppc Count Memory TestPerf EditCDev Sample SillyBalls TubeTest TESample

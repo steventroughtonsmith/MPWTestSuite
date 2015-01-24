@@ -1,18 +1,20 @@
 App			= IIGSPascalTest
 ObjectFiles	= IIGSPascalTest.p.o
 
+MPW ?= mpw
+
 all: $(App)
 
 $(App) :$(ObjectFiles)
-	mpw LinkIIGS \
+	$(MPW) LinkIIGS \
 		"{PIIGSLibraries}"/Pstart.Obj \
 		$(ObjectFiles) \
 		-lib "{PIIGSLibraries}"PLib \
 		-o "$(App)"
-	mpw DuplicateIIGS -y -mac "$(App)" "$(App)"
+	$(MPW) DuplicateIIGS -y -mac "$(App)" "$(App)"
 
 %.p.o : %.p
-	mpw PascalIIGS  $< -o $@
+	$(MPW) PascalIIGS  $< -o $@
 
 clean:
 	rm -f $(App) $(ObjectFiles)
