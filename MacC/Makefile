@@ -55,7 +55,7 @@ Count : Count.68k Count.ppc
 	$(MPW) duplicate -y Count.ppc $@
 	$(MPW) duplicate -y -r Count.68k $@
 	Rez -i $(RINCLUDES) Count.r	GenericCFRG.r -o Count -append -d APPNAME=\"Count\"
-	$(MPW) SetVersion -t 'vers' -i 1 -version "$(VERSION)" Count
+	#$(MPW) SetVersion -t 'vers' -i 1 -version "$(VERSION)" Count
 	$(MPW) SetFile -m . -c 'MPS ' -t MPST Count
 
 Count.ppc :	Count.c.ppc.o Count.r	GenericCFRG.r
